@@ -2,15 +2,15 @@
 {
     public class Startup
     {
-        public static IServiceProvider? ServiceProvider { get; set; }
+        public static IServiceProvider? ServicesProvider { get; set; }
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            ServiceProvider = serviceProvider;
+            ServicesProvider = serviceProvider;
         }
 
         public static T GetService<T>()
         {
-            return ServiceProvider.GetService<T>();
+            return ServicesProvider.GetService<T>();
         }
     }
 }

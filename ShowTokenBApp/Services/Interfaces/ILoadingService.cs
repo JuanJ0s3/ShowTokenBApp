@@ -9,6 +9,6 @@ namespace ShowTokenBApp.Services.Interfaces
     public interface ILoadingService
     {
         Task Show(string message = "Loading...");
-        Task<bool> Hide();
+        Task Hide();
     }
 }

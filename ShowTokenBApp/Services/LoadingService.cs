@@ -1,19 +1,38 @@
 ﻿using CommunityToolkit.Maui.Core;
+using Mopups.Interfaces;
+using Mopups.Services;
+using ShowTokenBApp.Popup;
 using ShowTokenBApp.Services.Interfaces;
 
 namespace ShowTokenBApp.Services
 {
     public class LoadingService : ILoadingService
     {
-      
-        public Task<bool> Hide()
+
+        private readonly IPopupNavigation _popupNavigation;
+
+
+        public LoadingService()
         {
-            throw new NotImplementedException();
+            _popupNavigation = MopupService.Instance;
+
+        }
+        public async Task Hide()
+        {
+            await _popupNavigation.PopAsync(true);
+
         }
 
-        public Task Show(string message = "Loading...")
+        public async Task Show(string message = "Loading...")
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _popupNavigation.PushAsync(new LoadingPopup(message), true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
         }
     }
 }
