@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShowTokenBApp.Pages.IntroductionPage"
+             Title="IntroductionPage"
+             BackgroundColor="Green">
+    
+    <StackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Introducción" 
+         FontSize="24" 
+         HorizontalOptions="Center" 
+         TextColor="Black" 
+         Margin="0,0,0,20" />
+
+        <Image Source="ruta_de_la_imagen.jpg" />
+
+
+
+        <Label Text="Usuario" TextColor="Black"  />
+
+        
+    </StackLayout>
+</ContentPage>

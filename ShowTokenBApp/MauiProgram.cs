@@ -2,6 +2,7 @@
 using CommunityToolkit.Maui;
 using ShowTokenBApp.Services.Interfaces;
 using ShowTokenBApp.Services;
+using Mopups.Hosting;
 //using Microsoft.Extensions.DependencyInjection;
 
 
@@ -15,6 +16,7 @@ namespace ShowTokenBApp
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .ConfigureMopups()
                 .ConfigureFonts(fonts =>
                 
             {
@@ -23,7 +25,7 @@ namespace ShowTokenBApp
             });
 
             object value = builder.Services.AddHttpClient();
-            //builder.Services.AddSingleton<ILoadingService, LoadingService>();
+            builder.Services.AddSingleton<ILoadingService, LoadingService>();
             //builder.Services.AddSingleton<IPersonService, PersonService>();
             builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
             builder.Services.AddSingleton<INavigationService, NavigationService>();

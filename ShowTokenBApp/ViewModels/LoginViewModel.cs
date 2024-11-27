@@ -9,7 +9,7 @@ namespace ShowTokenBApp.ViewModels
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly INavigationService _navigationService;
-        //private ILoadingService _loadingService;
+        private ILoadingService _loadingService;
 
         [ObservableProperty]
         private string username;
@@ -21,7 +21,7 @@ namespace ShowTokenBApp.ViewModels
         {
             _authenticationService = Startup.GetService<IAuthenticationService>();
             _navigationService = Startup.GetService<INavigationService>();
-            //_loadingService = Startup.GetService<ILoadingService>();
+            _loadingService = Startup.GetService<ILoadingService>();
         }
 
         [RelayCommand]
@@ -29,7 +29,7 @@ namespace ShowTokenBApp.ViewModels
         {
             if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
             {
-                //await _loadingService.Show();
+                await _loadingService.Show();
                 if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
                 {
                     await Toast.Make("Por favor ingrese las credenciales", CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
@@ -52,10 +52,10 @@ namespace ShowTokenBApp.ViewModels
                 {
                     await Toast.Make("Error en el servidor: " + ex.Message, CommunityToolkit.Maui.Core.ToastDuration.Long).Show();
                 }
-                //finally
-                //{
-                //    await _loadingService.Hide();
-                //}
+                finally
+                {
+                    await _loadingService.Hide();
+                }
             }
         }
     }
