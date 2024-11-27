@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ShowTokenBApp.ViewModels"
              x:Class="ShowTokenBApp.Pages.TheCocktailDBApiPage"
-             Title="TheCocktailDBApiPage">
-    <VerticalStackLayout>
+             Title="TheCocktailDBApiPage"
+             BackgroundColor="Blue">
+
+    <ContentPage.BindingContext>
+        <vm:TheCocktailDBApiViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <!-- Campo de búsqueda -->
+        <SearchBar 
+            Placeholder="Buscar cóctel..." 
+            Text="{Binding SearchText}" 
+            SearchCommand="{Binding SearchCommand}" />
+
+        <!-- Listado de bebidas -->
+        <CollectionView 
+            ItemsSource="{Binding Drinks}" 
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BorderColor="Black" CornerRadius="10">
+                        <VerticalStackLayout>
+                            <Label 
+                                Text="{Binding strDrink}" 
+                                FontAttributes="Bold" 
+                                FontSize="18" 
+                                TextColor="Black" />
+                            <Label 
+                                Text="{Binding strCategory}" 
+                                FontSize="14" 
+                                TextColor="Black" />
+                            <Label 
+                                Text="{Binding strAlcoholic}" 
+                                FontSize="14" 
+                                TextColor="Black" />
+                            <Image 
+                                Source="{Binding strDrinkThumb}" 
+                                HeightRequest="100" 
+                                Aspect="AspectFill" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Mensaje cuando no hay resultados -->
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            IsVisible="{Binding IsEmpty}" 
+            Text="No se encontraron resultados." 
+            FontSize="16" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

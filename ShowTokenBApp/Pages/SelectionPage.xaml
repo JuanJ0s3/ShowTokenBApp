@@ -19,10 +19,11 @@
 
         <Label Text="TheCocktailDB" TextColor="Black"  Margin="0,0,0,10"/>
         <Image Source="C:\Users\guari\source\repos\ShowTokenBApp\ShowTokenBApp\Resources\Images\cocteles.png" WidthRequest="150" Margin="0,0,0,10" />
-        <Button Command="{Binding  NavigateIntroductionCommand}" Text="Abrir" BackgroundColor="#007AFF" TextColor="Black" Margin="0,0,0,10"  />
+        <Button Command="{Binding  NavigateCoctailCommand}" Text="Abrir" BackgroundColor="#007AFF" TextColor="Black" Margin="0,0,0,10"  />
 
         <Label Text="TheMealDB" TextColor="Black"  Margin="0,0,0,10"/>
         <Image Source="C:\Users\guari\source\repos\ShowTokenBApp\ShowTokenBApp\Resources\Images\meal.png" WidthRequest="150" Margin="0,0,0,10" />
-        <Button Command="{Binding  NavigateIntroductionCommand}" Text="Abrir" BackgroundColor="#007AFF" TextColor="Black"  />
+        <Button Command="{Binding  NavigateMealCommand}" Text="Abrir" BackgroundColor="#007AFF" TextColor="Black"  />
     </StackLayout>
+
 </ContentPage>

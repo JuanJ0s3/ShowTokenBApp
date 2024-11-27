@@ -11,7 +11,7 @@ namespace ShowTokenBApp
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new SelectionPage());
+            return new Window(new AppShell());
         }
     }
 }

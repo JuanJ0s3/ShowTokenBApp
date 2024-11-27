@@ -20,6 +20,14 @@ namespace ShowTokenBApp.Services
             {
                 await Shell.Current.GoToAsync("//SelectionPage");
             }
+            else if (pageKey == "TheCocktailDBApiPage")
+            {
+                await Shell.Current.GoToAsync("//TheCocktailDBApiPage");
+            }
+            else if (pageKey == "TheMealDBApiPage")
+            {
+                await Shell.Current.GoToAsync("//TheMealDBApiPage");
+            }
         }
     }
 }
