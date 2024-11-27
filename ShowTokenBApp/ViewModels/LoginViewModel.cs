@@ -33,7 +33,6 @@ namespace ShowTokenBApp.ViewModels
                 if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
                 {
                     await Toast.Make("Por favor ingrese las credenciales", CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
-
                     return;
                 }
                 try
@@ -41,7 +40,8 @@ namespace ShowTokenBApp.ViewModels
                     var isAuthenticated = await _authenticationService.AuthenticateAsync(Username, Password);
                     if (isAuthenticated)
                     {
-                        await _navigationService.NavigateToAsync("PersonPage");
+                        await _navigationService.NavigateToAsync("IntroductionPage");
+                        //await Shell.Current.GoToAsync("IntroductionPage");
                     }
                     else
                     {
