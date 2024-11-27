@@ -41,7 +41,7 @@ namespace ShowTokenBApp.ViewModels
                     if (isAuthenticated)
                     {
                         await _navigationService.NavigateToAsync("IntroductionPage");
-                        //await Shell.Current.GoToAsync("IntroductionPage");
+         
                     }
                     else
                     {

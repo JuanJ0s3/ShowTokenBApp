@@ -9,5 +9,8 @@
 
     <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" Route="LoginPage" />
     <ShellContent ContentTemplate="{DataTemplate local:IntroductionPage}" Route="IntroductionPage" />
+    <ShellContent ContentTemplate="{DataTemplate local:SelectionPage}" Route="SelectionPage" />
+    <ShellContent ContentTemplate="{DataTemplate local:TheCocktailDBApiPage}" Route="TheCocktailDBApiPage" />
+    <ShellContent ContentTemplate="{DataTemplate local:TheMealDBApiPage}" Route="TheMealDBApiPage" />
 
 </Shell>

@@ -2,22 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShowTokenBApp.Pages.IntroductionPage"
+             xmlns:vm="clr-namespace:ShowTokenBApp.ViewModels"
              Title="IntroductionPage"
-             BackgroundColor="Green">
-    
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <vm:IntroductionViewModel/>
+    </ContentPage.BindingContext>
+
     <StackLayout  VerticalOptions="Center" HorizontalOptions="Center">
         <Label Text="Introducción" 
-         FontSize="24" 
+         FontSize="35" 
          HorizontalOptions="Center" 
          TextColor="Black" 
          Margin="0,0,0,20" />
 
-        <Image Source="ruta_de_la_imagen.jpg" />
+        <Image Source="C:\Users\guari\source\repos\ShowTokenBApp\ShowTokenBApp\Resources\Images\comida.png" WidthRequest="180" Margin="0,0,0,20" />
 
 
+        <Label Text="API de Cócteles: Proporciona información sobre recetas, ingredientes y preparación de cócteles. Permite buscar por nombre, categoría o tipo de bebida." TextColor="Black" WidthRequest="600" Margin="0,0,0,15"/>
+        <Label Text="API de Comidas: Ofrece datos sobre recetas, ingredientes, valores nutricionales y métodos de preparación de platos. Soporta búsquedas por nombre, ingredientes o tipo de comida." TextColor="Black" WidthRequest="600"  Margin="0,0,0,15"/>
 
-        <Label Text="Usuario" TextColor="Black"  />
+        <Button Command="{Binding  NavigateIntroductionCommand}" Text="Siguiente" BackgroundColor="#007AFF" TextColor="Black"  />
 
-        
     </StackLayout>
 </ContentPage>
+
+

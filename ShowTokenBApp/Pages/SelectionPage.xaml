@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShowTokenBApp.Pages.SelectionPage"
+             xmlns:vm="clr-namespace:ShowTokenBApp.ViewModels"
+             Title="SelectionPage"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <vm:SelectionViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Seleccipon de Apis" 
+             FontSize="35" 
+             HorizontalOptions="Center" 
+             TextColor="Black" 
+             Margin="0,0,0,10" />
+
+        <Label Text="TheCocktailDB" TextColor="Black"  Margin="0,0,0,10"/>
+        <Image Source="C:\Users\guari\source\repos\ShowTokenBApp\ShowTokenBApp\Resources\Images\cocteles.png" WidthRequest="150" Margin="0,0,0,10" />
+        <Button Command="{Binding  NavigateIntroductionCommand}" Text="Abrir" BackgroundColor="#007AFF" TextColor="Black" Margin="0,0,0,10"  />
+
+        <Label Text="TheMealDB" TextColor="Black"  Margin="0,0,0,10"/>
+        <Image Source="C:\Users\guari\source\repos\ShowTokenBApp\ShowTokenBApp\Resources\Images\meal.png" WidthRequest="150" Margin="0,0,0,10" />
+        <Button Command="{Binding  NavigateIntroductionCommand}" Text="Abrir" BackgroundColor="#007AFF" TextColor="Black"  />
+    </StackLayout>
+</ContentPage>
